@@ -1,0 +1,21 @@
+<h1>Username(placeholder)</h1>
+<%= link_to 'Add Assignment', new_assignment_path %> 
+<table>
+  <tr>
+    <th>List of Assignments</th>
+    <th>Status</th>
+    <th>Difficulty</th>
+    <th>Points Earned</th>
+    <th>Due Date</th>
+  </tr>
+ 
+  <% @assignments.each do |assignment| %>
+    <tr>
+      <td><%= assignment.title %></td>
+      <td><%= assignment.text %></td>
+      <td><%= assignment.difficulty %></td>
+      <td><%= assignment.goalgrade %></td>
+      <td><%= assignment.due %></td>
+    </tr>
+  <% end %>
+</table>
