@@ -12,6 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2019_04_01_163148) do
 
+  create_table "assignments", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.integer "difficulty"
+    t.decimal "Goalgrade"
+    t.date "Due"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
