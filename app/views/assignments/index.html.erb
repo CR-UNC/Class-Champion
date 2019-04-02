@@ -16,6 +16,8 @@
       <td><%= assignment.difficulty %></td>
       <td><%= assignment.Goalgrade %></td>
       <td><%= assignment.Due %></td>
+      <td><%= link_to 'Show', assignment_path(assignment) %></td>
+      <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
     </tr>
   <% end %>
 </table>
