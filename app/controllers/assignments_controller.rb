@@ -28,6 +28,12 @@ class AssignmentsController < ApplicationController
             render 'edit'
         end
     end
+    def destroy
+        @assignment = Assignment.find(params[:id])
+        @assignment.destroy
+        
+        redirect_to assignment_path
+    end
 end
 
 private
