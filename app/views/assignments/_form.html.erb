@@ -1,0 +1,49 @@
+
+
+<%= form_for @assignment do |f| %>   
+
+    <% if @assignment.errors.any? %>     
+        <div id="error_explanation">      
+            <h2>        
+                <%= pluralize(@assignment.errors.count, "error") %> prohibited  
+                this article from being saved:      
+            </h2>       
+            <ul>        
+                <% @assignment.errors.full_messages.each do |msg| %>           
+                    <li><%= msg %></li>         
+                <% end %>      
+            </ul>     
+        </div>  
+    <% end %>    
+    <p>     
+            <%= f.label :title %><br>     
+            <%= f.text_field :title %>   
+        </p>
+        
+        <p>     
+            <%= f.label :text %><br>     
+            <%= f.text_area :text %>   
+        </p>    
+        
+        <p>
+            <%= f.label :difficulty%><br>
+            <%= f.text_field :difficulty%>
+        </p>
+        
+        <p>
+            <%= f.label :Goalgrade, "Goal Grade"%><br>
+            <%= f.text_field :Goalgrade %>
+            
+           
+        </p>
+        
+        <p>
+            <%= f.label :Due%><br>
+            <%= f.text_field :Due%>
+        </p>
+        
+    <p>     
+        <%= f.submit %>  
+    </p>  
+<% end %>
+

@@ -2,12 +2,6 @@ class AssignmentsController < ApplicationController
     def index
         @assignments = Assignment.all
     end
-    def show
-        @assignment = Assignment.find(params[:id])
-    end
-    
-    def new
-    end
     
     def create
         @assignment = Assignment.new(assignment_params)
@@ -15,6 +9,16 @@ class AssignmentsController < ApplicationController
         @assignment.save
         redirect_to @assignment
     end
+    
+    def show
+        @assignment = Assignment.find(params[:id])
+    end
+    
+    def new
+        @assignment = Assignment.new
+    end
+    
+    
     
     def edit
         @assignment = Assignment.find(params[:id])
