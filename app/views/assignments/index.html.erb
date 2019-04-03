@@ -5,8 +5,9 @@
     <th>List of Assignments</th>
     <th>Status</th>
     <th>Difficulty</th>
-    <th>Points Earned</th>
+    <th>Desired Grade</th>
     <th>Due Date</th>
+    
   </tr>
  
   <% @assignments.each do |assignment| %>
@@ -14,7 +15,7 @@
       <td><%= assignment.title %></td>
       <td><%= assignment.text %></td>
       <td><%= assignment.difficulty %></td>
-      <td><%= assignment.Goalgrade %></td>
+      <td>%<%= assignment.Goalgrade %></td>
       <td><%= assignment.Due %></td>
       <td><%= link_to 'Show', assignment_path(assignment) %></td>
       <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>

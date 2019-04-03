@@ -16,17 +16,17 @@
         </div>  
     <% end %>    
     <p>     
-            <%= f.label :title %><br>     
+            <%= f.label :title, "Assignment Name" %><br>     
             <%= f.text_field :title %>   
         </p>
         
         <p>     
-            <%= f.label :text %><br>     
+            <%= f.label :text, "Assignment Description" %><br>     
             <%= f.text_area :text %>   
         </p>    
         
         <p>
-            <%= f.label :difficulty%><br>
+            <%= f.label :difficulty, "Difficulty on a scale of 1 to 10"%><br>
             <%= f.text_field :difficulty%>
         </p>
         
@@ -38,7 +38,7 @@
         </p>
         
         <p>
-            <%= f.label :Due%><br>
+            <%= f.label :Due, "Due Date"%><br>
             <%= f.text_field :Due%>
         </p>
         
