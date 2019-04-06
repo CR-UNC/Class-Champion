@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_203744) do
+ActiveRecord::Schema.define(version: 2019_04_06_194044) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2019_04_03_203744) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "points"
+  end
+
+  create_table "incentives", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.integer "cost"
+    t.binary "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
