@@ -24,6 +24,20 @@ class IncentivesController < ApplicationController
     
     end
     
+    def edit
+        @incentive = Incentive.find(params[:id])
+    end
+    
+    def update
+        @incentive = Incentive.find(params[:id])
+        
+        if @incentive.update(incentive_params)
+            redirect_to @incentive
+        else
+            render 'edit'
+        end
+    end
+    
     def destroy
         @incentive = Incentive.find(params[:id])
         @incentive.destroy
