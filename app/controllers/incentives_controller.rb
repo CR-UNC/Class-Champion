@@ -1,4 +1,8 @@
 class IncentivesController < ApplicationController
+    def index
+        @incentives = Incentive.all
+    end
+    
     def show
         @incentive = Incentive.find(params[:id])
     end
@@ -12,12 +16,20 @@ class IncentivesController < ApplicationController
     def create
         @incentive = Incentive.new(incentive_params)
         
-        @incentive.save
+        if @incentive.save
         redirect_to @incentive
+    else
+        render 'new'
+        end
+    
     end
     
-    
-    
+    def destroy
+        @incentive = Incentive.find(params[:id])
+        @incentive.destroy
+        
+        redirect_to incentives_path
+    end
     
 end
 

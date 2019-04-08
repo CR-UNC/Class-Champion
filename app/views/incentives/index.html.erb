@@ -1,0 +1,26 @@
+<h1>Username(placeholder)</h1>
+<%= link_to 'Create Incentive', new_incentive_path %> 
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">List of incentives</th>
+      <th scope="col">Description</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Image</th>
+     
+    
+    </tr>
+  </thead>
+ 
+  <% @incentives.each do |incentive| %>
+    <tr>
+      <td><%= incentive.title %></td>
+      <td><%= incentive.text %></td>
+      <td><%= incentive.cost %></td>
+      <td> Click Show for image! </td>
+      <td><%= link_to 'Show', incentive_path(incentive) %></td>
+      <td><%= link_to 'Edit', edit_incentive_path(incentive) %></td>
+      <td><%= link_to 'Destroy', incentive_path(incentive), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

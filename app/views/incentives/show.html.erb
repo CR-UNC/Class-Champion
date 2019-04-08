@@ -15,5 +15,7 @@
 
 <p>
     <strong> Picture:</strong>
-    <%= @incentive.image %>
+   <% if @incentive.image.attached? %>
+                      <image src="<%=(url_for(@incentive.image))%>">
+                  <% end %>
 </p>

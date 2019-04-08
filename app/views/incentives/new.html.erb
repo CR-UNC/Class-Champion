@@ -1,5 +1,19 @@
 <h1> New Incentive</h1>
-<%= form_for :incentive, url: incentive_path do |f| %>   
+<%= form_for :incentive, url: incentives_path do |f| %>   
+
+<% if @incentive.errors.any? %>     
+        <div id="error_explanation">      
+            <h2>        
+                <%= pluralize(@incentive.errors.count, "error") %> prohibited  
+                this article from being saved:      
+            </h2>       
+            <ul>        
+                <% @incentive.errors.full_messages.each do |msg| %>           
+                    <li><%= msg %></li>         
+                <% end %>      
+            </ul>     
+        </div>  
+    <% end %>    
 
     <p>     
             <%= f.label :title, "Incentive Name" %><br>     
@@ -26,3 +40,4 @@
         <%= f.submit %>  
     </p>  
 <% end %>
+<%= link_to 'Back', incentives_path %>
