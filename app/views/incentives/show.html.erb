@@ -1,0 +1,21 @@
+<p>
+    <strong> Title:</strong>
+    <%= @incentive.title %>
+</p>
+
+<p>
+    <strong> Text:</strong>
+    <%= @incentive.text %>
+</p>
+
+<p>
+    <strong> Cost:</strong>
+    <%= @incentive.cost %>
+</p>
+
+<p>
+    <strong> Picture:</strong>
+   <% if @incentive.image.attached? %>
+                      <image src="<%=(url_for(@incentive.image))%>">
+                  <% end %>
+</p>

@@ -56,4 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+<<<<<<< HEAD
 gem 'clearance'
+=======
+>>>>>>> ac9d719dea317038b977e341d1931e4ceeffb116
