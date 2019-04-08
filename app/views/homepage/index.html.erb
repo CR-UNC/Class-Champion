@@ -9,10 +9,10 @@
   <div class="form-group">
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <button type="submit" class="sign-in-btn btn btn-primary">Submit</button>
+  <button type="submit" class="sign-in-btn">Submit</button>
 </form>
 </div>
 </div>
  <h1>OR</h1>
-  <button type="submit" class="btn btn-primary homepage-btn">Sign Up</button>
-
+ 
+  <%= link_to t(".sign_up"), sign_up_path,:class => "btn btn-primary homepage-btn" %>
