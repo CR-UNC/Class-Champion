@@ -1,4 +1,11 @@
-<h1>Username(placeholder)</h1>
+<% if signed_in? %>
+  <%= current_user.username %>
+  <%= button_to "Sign out", sign_out_path, method: :delete %>
+<% else %>
+  <h1>Username(placeholder)</h1>
+  <%= link_to "Sign in", sign_in_path %>
+<% end %>
+
 <%= link_to 'Add Assignment', new_assignment_path %> 
 <table class="table">
   <thead class="thead-light">
