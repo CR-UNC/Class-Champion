@@ -1,4 +1,11 @@
-<h1>Username(placeholder)</h1>
+<% if signed_in? %>
+  <h1><%= current_user.username %></h1>
+  <%= button_to "Sign out", sign_out_path, method: :delete %>
+<% else %>
+  <h1>Username(placeholder)</h1>
+  <%= link_to "Sign in", sign_in_path %><br>
+<% end %>
+
 <%= link_to 'Create Incentive', new_incentive_path %> 
 <table class="table">
   <thead class="thead-light">
@@ -24,3 +31,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Back to Assignments', "https://c7a547a5ede1415184f8430dfe553e08.vfs.cloud9.us-east-2.amazonaws.com/assignments/" %>
