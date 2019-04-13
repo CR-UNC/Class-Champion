@@ -1,4 +1,5 @@
 class Assignment < ApplicationRecord
+  
     validates :title, presence: true
     validates :text, presence: true
     validates :difficulty, presence: true, numericality: {only_integer: true,

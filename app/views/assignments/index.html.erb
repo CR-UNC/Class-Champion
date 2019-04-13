@@ -1,5 +1,6 @@
 <p><% if signed_in? %>
   <h1><%= current_user.username %></h1>
+  <h2> Current Points: <%= current_user.points %></h2>
   <%= button_to "Sign out", sign_out_path, method: :delete %>
 <% else %>
   <h1>Username(placeholder)</h1>
@@ -19,18 +20,19 @@
     
     </tr>
   </thead>
- 
+  
   <% @assignments.each do |assignment| %>
     <tr>
       <td><%= assignment.title %></td>
       <td><%= assignment.text %></td>
       <td><%= assignment.difficulty %></td>
-      <td>%<%= assignment.Goalgrade %></td>
+      <td><%= assignment.Goalgrade %>%</td>
       <td><%= assignment.Due %></td>
       <td> <%= assignment.points %> </td>
       <td><%= link_to 'Show', assignment_path(assignment) %></td>
       <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-      <td><%= link_to 'Destroy', assignment_path(assignment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', assignment_path(assignment), method: :delete, data: {confirm: 'Completing this assignment will grant you its points and delete it'  } %></td>
+      
     </tr>
   <% end %>
 </table>

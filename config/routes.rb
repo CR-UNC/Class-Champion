@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users,
-  controller: 'users',
-  only: 'create'
+  controller: 'users'
+  
   
   get 'homepage/index'
   

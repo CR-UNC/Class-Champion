@@ -6,6 +6,7 @@ class AssignmentsController < ApplicationController
     def create
         @assignment = Assignment.new(assignment_params)
         @assignment.points = (10 * @assignment.difficulty) + (@assignment.Goalgrade/2).round
+        
         @assignment.save
         redirect_to @assignment
     end
@@ -34,10 +35,19 @@ class AssignmentsController < ApplicationController
     end
     def destroy
         @assignment = Assignment.find(params[:id])
+       
+        
+        
+        
         @assignment.destroy
         
         redirect_to assignments_path
     end
+    
+    
+    
+    
+    
 end
 
 private

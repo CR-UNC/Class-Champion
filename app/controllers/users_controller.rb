@@ -2,6 +2,7 @@ class UsersController < Clearance::UsersController
 
   def create
     @user = user_from_params
+    @user.points = 0
 
     if @user.save
       sign_in @user
@@ -10,7 +11,8 @@ class UsersController < Clearance::UsersController
       render template: 'users/new'
     end 
   end 
-
+  
+  
   private
 
   def user_from_params
