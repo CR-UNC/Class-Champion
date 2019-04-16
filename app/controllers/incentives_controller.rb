@@ -14,7 +14,8 @@ class IncentivesController < ApplicationController
     
     
     def create
-        @incentive = Incentive.new(incentive_params)
+        @user = current_user
+        @incentive = @user.incentives.create(incentive_params)
         
         if @incentive.save
         redirect_to @incentive

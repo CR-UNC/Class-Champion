@@ -12,6 +12,11 @@ class UsersController < Clearance::UsersController
     end 
   end 
   
+  def edit
+    
+  end
+
+  
   
   private
 

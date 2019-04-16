@@ -4,7 +4,8 @@ class AssignmentsController < ApplicationController
     end
     
     def create
-        @assignment = Assignment.new(assignment_params)
+        @user = current_user
+        @assignment = @user.assignments.create(assignment_params)
         @assignment.points = (10 * @assignment.difficulty) + (@assignment.Goalgrade/2).round
         
         @assignment.save
