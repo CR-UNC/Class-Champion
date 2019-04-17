@@ -41,6 +41,10 @@ class IncentivesController < ApplicationController
     
     def destroy
         @incentive = Incentive.find(params[:id])
+        @user = current_user
+        @user.points = @user.points - @incentive.cost
+        @user.save
+        
         @incentive.destroy
         
         redirect_to incentives_path

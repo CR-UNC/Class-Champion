@@ -36,6 +36,9 @@ class AssignmentsController < ApplicationController
     end
     def destroy
         @assignment = Assignment.find(params[:id])
+        @user = current_user
+        @user.points = @assignment.points + @user.points
+        @user.save
        
         
         
@@ -45,6 +48,17 @@ class AssignmentsController < ApplicationController
         redirect_to assignments_path
     end
     
+    
+    def complete
+        @assignment = Assignment.find(params[:id])
+       
+        
+        
+        
+        @assignment.points = 0
+        
+        redirect_to assignments_path
+    end
     
     
     

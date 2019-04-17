@@ -1,6 +1,8 @@
 <p><% if signed_in? %>
   <h1><%= current_user.username %></h1>
+  <h2> Current Points: <%= current_user.points %></h2>
   <%= button_to "Sign out", sign_out_path, method: :delete %>
+  
 <% else %>
   <h1>Username(placeholder)</h1>
   <%= link_to "Sign in", sign_in_path %><br>
