@@ -20,8 +20,10 @@
     
     </tr>
   </thead>
+  <% @user = current_user %>
   
   <% @assignments.each do |assignment| %>
+  <% if current_user.id == assignment.user_id %>
     <tr>
       <td><%= assignment.title %></td>
       <td><%= assignment.text %></td>
@@ -34,6 +36,7 @@
       <td><%= link_to 'Complete',assignment_path(assignment), method: :put, data: {confirm: 'Completing this assignment will grant you its points and delete it'  } %></td>
       
     </tr>
+    <%end%>
   <% end %>
 </table>
 

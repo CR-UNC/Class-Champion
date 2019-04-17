@@ -4,10 +4,10 @@
 
     <% if @assignment.errors.any? %>     
         <div id="error_explanation">      
-            <h2>        
+            <p>        
                 <%= pluralize(@assignment.errors.count, "error") %> prohibited  
                 this article from being saved:      
-            </h2>       
+            </p>       
             <ul>        
                 <% @assignment.errors.full_messages.each do |msg| %>           
                     <li><%= msg %></li>         

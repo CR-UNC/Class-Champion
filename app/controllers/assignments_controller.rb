@@ -6,10 +6,15 @@ class AssignmentsController < ApplicationController
     def create
         @user = current_user
         @assignment = @user.assignments.create(assignment_params)
-        @assignment.points = (10 * @assignment.difficulty) + (@assignment.Goalgrade/2).round
-        
-        @assignment.save
-        redirect_to @assignment
+        if @assignment.save
+            @assignment.points = (10 * @assignment.difficulty) + (@assignment.Goalgrade/2).round
+            @assignment.save
+            redirect_to @assignment
+       else
+           render 'new'
+        end
+        #@assignment.save
+       # redirect_to @assignment
     end
     
     def show
@@ -28,7 +33,7 @@ class AssignmentsController < ApplicationController
     
     def update
         @assignment = Assignment.find(params[:id])
-         @user = current_user
+        @user = current_user
         @user.points = @assignment.points + @user.points
         @user.save
         @assignment.points = 0
