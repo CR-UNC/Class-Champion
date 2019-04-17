@@ -30,8 +30,8 @@ class IncentivesController < ApplicationController
     end
     
     def update
-        @incentive = incentive.find(params[:id])
-         @user = current_user
+        @incentive = Incentive.find(params[:id])
+        @user = current_user
         @user.points = @user.points - @incentive.cost
         @user.save
         
