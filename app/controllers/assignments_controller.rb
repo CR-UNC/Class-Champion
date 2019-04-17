@@ -28,18 +28,19 @@ class AssignmentsController < ApplicationController
     
     def update
         @assignment = Assignment.find(params[:id])
-        if @assignment.update(assignment_params)
-            redirect_to @assignment
-        else
-            render 'edit'
-        end
-    end
-    def destroy
-        @assignment = Assignment.find(params[:id])
-        @user = current_user
+         @user = current_user
         @user.points = @assignment.points + @user.points
         @user.save
-       
+        @assignment.points = 0
+        @assignment.save
+        @assignment.destroy
+        
+        redirect_to assignments_path
+    end
+    
+    
+    def destroy
+        @assignment = Assignment.find(params[:id])
         
         
         
@@ -49,16 +50,6 @@ class AssignmentsController < ApplicationController
     end
     
     
-    def complete
-        @assignment = Assignment.find(params[:id])
-       
-        
-        
-        
-        @assignment.points = 0
-        
-        redirect_to assignments_path
-    end
     
     
     

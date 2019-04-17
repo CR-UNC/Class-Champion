@@ -30,20 +30,18 @@ class IncentivesController < ApplicationController
     end
     
     def update
-        @incentive = Incentive.find(params[:id])
+        @incentive = incentive.find(params[:id])
+         @user = current_user
+        @user.points = @user.points - @incentive.cost
+        @user.save
         
-        if @incentive.update(incentive_params)
-            redirect_to @incentive
-        else
-            render 'edit'
-        end
+        @incentive.destroy
+        redirect_to incentives_path
     end
     
     def destroy
         @incentive = Incentive.find(params[:id])
-        @user = current_user
-        @user.points = @user.points - @incentive.cost
-        @user.save
+        
         
         @incentive.destroy
         
