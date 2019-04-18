@@ -6,12 +6,12 @@ Feature: Homepage sign in and sign up
   
 Scenario: As a user I want to be able to sign up
   Given I am on the home page
-  When I click on the "Sign Up" link
+  When I press the ".sign_up" link
   Then I should be on the "Sign up" page
   When I fill the account email textbox with value "example@uncc.edu"
   And I fill the Username texbox with value "example"
   And I fill the password textbox with value "example"
-  And I click the Sign Up button
+  And I press the "sign_up" link
 
 Scenario: As a user I want to be able to sign in  
   Given I am on the home page

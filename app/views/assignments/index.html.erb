@@ -23,7 +23,7 @@
   <% @user = current_user %>
   
   <% @assignments.each do |assignment| %>
-  <% if current_user.id == assignment.user_id %>
+  <% if signed_in? && current_user.id == assignment.user_id %>
     <tr>
       <td><%= assignment.title %></td>
       <td><%= assignment.text %></td>
