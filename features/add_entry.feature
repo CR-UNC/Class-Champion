@@ -1,8 +1,8 @@
-Feature: Add a new assignment entry
+Feature: Homepage sign in and sign up
   
   As a user
-  So that I can easily contribute to my account
-  I want to be able to add a new assignment entry
+  So that I can easily access my account
+  I want to be able to sign in or sign up
   
 Scenario: As a user I want to be able to sign up
   Given I am on the home page
@@ -19,7 +19,12 @@ Scenario: As a user I want to be able to sign in
   And I fill the password textbox with value "example"
   And I click the submit button
   
-
+Feature: Add a new assignment entry
+  
+  As a user
+  So that I can easily contribute to my account
+  I want to be able to add a new assignment entry
+  
 Scenario: As a user I want to be able to interact with assignment's page  
   Given I am on the assignments page
   When I click on the "Add Assignment" link
