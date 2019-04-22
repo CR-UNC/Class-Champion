@@ -36,10 +36,9 @@ class AssignmentsController < ApplicationController
         @user = current_user
         @user.points = @assignment.points + @user.points
         @user.save
-        @assignment.points = 0
-        @assignment.save
         @assignment.destroy
         
+        flash[:success] = "Congratulations!"
         redirect_to assignments_path
     end
     

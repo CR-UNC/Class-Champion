@@ -36,9 +36,12 @@ class IncentivesController < ApplicationController
             @user.points = @user.points - @incentive.cost
             @user.save
             @incentive.destroy
+            flash[:success] = "Congratulations!"
             redirect_to incentives_path
         else
+            flash[:failure] = "You need more points"
             redirect_to incentives_path
+            
         end
     end
     
