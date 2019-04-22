@@ -12,4 +12,5 @@ Scenario: As a user I want to be able to interact with assignment's page
   And I should see the "Assignment Description" field
   And I should see the "Difficulty on a scale of 1 to 10" field
   And I should see the "Goal Grade" field
-  And I should see the "Due Date" date
+  #And I should see the "Due Date" date
+  When I click on the "Create Assignment" link
