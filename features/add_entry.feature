@@ -14,3 +14,6 @@ Scenario: As a user I want to be able to interact with assignment's page
   And I should see the "Goal Grade" field
   #And I should see the "Due Date" date
   When I click on the "Create Assignment" link
+  And I should see the "assignment_Due_1i" field
+  And I should see the "assignment_Due_2i" field
+  And I should see the "assignment_Due_3i" field

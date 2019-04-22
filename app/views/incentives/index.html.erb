@@ -28,7 +28,6 @@
       <td><%= incentive.cost %></td>
       <td> Click "Show" for image! </td>
       <td><%= link_to 'Show', incentive_path(incentive) %></td>
-      <td><%= link_to 'Edit', edit_incentive_path(incentive) %></td>
       <td><%= link_to 'Delete', incentive_path(incentive), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <td><%= link_to 'Buy', incentive_path(incentive), method: :put, data: { confirm: 'would you like to buy this reward?' } %></td>
     </tr>
