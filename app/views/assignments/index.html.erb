@@ -1,6 +1,8 @@
 <p><% if signed_in? %>
   <h1><%= current_user.username %></h1>
+  <p>
   <h2> Current Points: <%= current_user.points %></h2>
+  </p>
   <%= button_to "Sign out", sign_out_path, method: :delete %>
 <% else %>
   <h1>Username(placeholder)</h1>
@@ -16,7 +18,7 @@
       <th scope="col">Difficulty</th>
       <th scope="col">Desired Grade</th>
       <th scope="col">Due Date</th>
-      <th scope="col">Point Value</th>
+      <th scope="col">Max Point Value</th>
     
     </tr>
   </thead>
@@ -33,12 +35,13 @@
       <td> <%= assignment.points %> </td>
       <td><%= link_to 'Show', assignment_path(assignment) %></td>
       <td><%= link_to 'Delete', assignment_path(assignment), method: :delete, data: {confirm: 'Are you sure you wish to delete this assignment?'  } %></td>
-      <td><%= link_to 'Complete',assignment_path(assignment), method: :put, data: {confirm: 'Completing this assignment will grant you its points and delete it'  } %></td>
+      <td><%= link_to 'Complete',edit_assignment_path(assignment), data: {confirm: 'Completing this assignment will grant you its points and delete it'  } %></td>
       
     </tr>
     <%end%>
   <% end %>
 </table>
 
-
+<p>
 <%=  link_to 'Rewards', "https://c7a547a5ede1415184f8430dfe553e08.vfs.cloud9.us-east-2.amazonaws.com/incentives/" %>
+</p>

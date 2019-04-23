@@ -32,14 +32,14 @@ class IncentivesController < ApplicationController
     def update
         @incentive = Incentive.find(params[:id])
         @user = current_user
-        if @user.points > @incentive.cost
+        if @user.points >= @incentive.cost
             @user.points = @user.points - @incentive.cost
             @user.save
             @incentive.destroy
             flash[:success] = "Congratulations!"
             redirect_to incentives_path
         else
-            flash[:failure] = "You need more points"
+            flash[:success] = "You need " + (@incentive.cost - @user.points).to_s + " more points"
             redirect_to incentives_path
             
         end
