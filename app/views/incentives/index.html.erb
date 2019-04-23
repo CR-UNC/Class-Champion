@@ -26,7 +26,7 @@
       <td><%= incentive.title %></td>
       <td><%= incentive.text %></td>
       <td><%= incentive.cost %></td>
-      <td> Click "Show" for image! </td>
+      <td> <% if incentive.image.attached? %> <img src="<%=(url_for(incentive.image))%>">  <% else %> No Image Here <% end %></td>
       <td><%= link_to 'Show', incentive_path(incentive) %></td>
       <td><%= link_to 'Delete', incentive_path(incentive), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <td><%= link_to 'Buy', incentive_path(incentive), method: :put, data: { confirm: 'would you like to buy this reward?' } %></td>
