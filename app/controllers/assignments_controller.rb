@@ -34,12 +34,17 @@ class AssignmentsController < ApplicationController
     def update
         @assignment = Assignment.find(params[:id])
         @user = current_user
-        @user.points = @assignment.points + @user.points
-        @user.save
-        @assignment.destroy
+        if @assignment.update(assignment_params)
+            @assignment.points = (10 * @assignment.difficulty) + (@assignment.Goalgrade/2).round
+            @user.points = @assignment.points + @user.points
+            @user.save
+            flash[:success] = "Congratulations! You earned " + @assignment.points.to_s + " points!"
+            @assignment.destroy
+            redirect_to assignments_path
+        else
+            render 'edit'
+        end
         
-        flash[:success] = "Congratulations!"
-        redirect_to assignments_path
     end
     
     

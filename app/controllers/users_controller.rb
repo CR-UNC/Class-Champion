@@ -6,7 +6,7 @@ class UsersController < Clearance::UsersController
 
     if @user.save
       sign_in @user
-      redirect_to '/'
+      redirect_to assignments_path
     else
       render template: 'users/new'
     end 
