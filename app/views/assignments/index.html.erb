@@ -10,7 +10,9 @@
 <% end %>
 </p>
 <%= link_to 'Add Assignment', new_assignment_path %> 
-<table class="table">
+
+<div class = "container">
+<table class="table table-light table-striped">
   <thead class="thead-light">
     <tr>
       <th scope="col">List of Assignments</th>
@@ -19,7 +21,9 @@
       <th scope="col">Desired Grade</th>
       <th scope="col">Due Date</th>
       <th scope="col">Max Point Value</th>
-    
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <% @user = current_user %>
@@ -41,6 +45,7 @@
     <%end%>
   <% end %>
 </table>
+</div>
 
 <p>
 <%=  link_to 'Rewards', "https://c7a547a5ede1415184f8430dfe553e08.vfs.cloud9.us-east-2.amazonaws.com/incentives/" %>

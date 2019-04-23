@@ -1,12 +1,15 @@
+<div class ="card card-default" id=sign-in-box>
+  <div id=sign-in-box-heading class="card-heading">Sign-in</div>
+  <div class = "card-body">
 <%= form_for :session, url: session_path do |form| %>
   <div class="text-field">
     <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+    <%= form.text_field :email, type: 'email', :class => "form-control" %>
   </div>
 
   <div class="password-field">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, :class => "form-control" %>
   </div>
 
   <div class="submit-field">
@@ -15,8 +18,11 @@
 
   <div class="other-links">
     <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+      <%= link_to t(".sign_up"), sign_up_path, :class => "sign-in-btn"  %>
     <% end %>
     <%= link_to t(".forgot_password"), new_password_path %>
   </div>
 <% end %>
+</div>
+</div>
+

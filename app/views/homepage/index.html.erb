@@ -1,19 +1,20 @@
-<h1 id = "title">Class Champion</h1>
-<div class ="card card-default" id=sign-in-box>
-  <div id=sign-in-box-heading class="card-heading">Sign-in</div>
-  <div class = "card-body">
-<form>
-  <div class="form-group">
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
+
+<div class="jumbotron jumbotron-fluid homepage-jumbo">
+  <div class="container homepage-jumbo-words">
+    <div class="row">
+    <div class="col-sm-12"><h1 id = "title">Class Champion</h1></div>
   </div>
-  <div class="form-group">
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  <div class="row">
+    <div class="col-sm-12"><p class = "jumbotron-p">Incentivize yourself to complete your assignmets on time!</p></div>
   </div>
-  <button hidden type="submit" class="sign-in-btn">Submit</button><%= link_to 'Submit', "https://c7a547a5ede1415184f8430dfe553e08.vfs.cloud9.us-east-2.amazonaws.com/assignments/" %>
-</form>
+  </div>
+
+
+<div class="container hompage-btn-container">
+   <div class="row">
+    <div class="col-sm-6"><%= link_to t(".sign_in"), sign_in_path,:class => "btn btn-warning homepage-btn" %></div>
+    <div class="col-sm-6"><%= link_to t(".sign_up"), sign_up_path,:class => "btn btn-warning homepage-btn" %></div>
+  </div>
 </div>
-</div>
- <h1>OR</h1>
- 
-  <%= link_to t(".sign_up"), sign_up_path,:class => "btn btn-primary homepage-btn" %>
+
   
