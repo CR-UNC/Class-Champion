@@ -41,7 +41,6 @@
       <th scope="col"></th>
     </tr>
   </thead>
-  <!--<h2> You can only buy rewards you have the points for</h2>-->
   <% @user = current_user %>
   <% @incentives.each do |incentive| %>
   <% if signed_in? && current_user.id == incentive.user_id %>
