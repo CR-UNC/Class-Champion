@@ -1,4 +1,4 @@
-
+<div id = 'show-box'>
 <p>
     <strong> Title:</strong>
     <%= @assignment.title %>
@@ -28,4 +28,6 @@
     <strong> Point Value:</strong>
     <%= @assignment.points %>
 </p>
-<%= link_to 'Assignment List', assignments_path %>
+<%= link_to '<- Assignment List', assignments_path, :class => "btn btn-primary" %>
+
+</div>
