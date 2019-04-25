@@ -53,3 +53,7 @@ end
 Then("I should see the {string} date") do |date_name|
   expect(page).to have_date(date_name)
 end
+
+Given("I am on the Complete assignment page") do
+  visit edit_assignment_path(assignment)
+end
