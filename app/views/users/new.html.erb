@@ -1,17 +1,18 @@
 <div class ="card card-default" id=sign-in-box>
+  <div id=sign-in-box-heading class="card-heading">Sign-up</div>
 <div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
-
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
+<div class = "container signing-btns">
+  <div class = "row">
+    <div class="col-sm-12">
     <div class="submit-field">
-      <%= form.submit "Sign Up", :class => "btn btn-primary sign-in-btn" %>
+      <%= form.submit "Sign Up", :class => "btn btn-primary" %>
     </div>
+    </div>
+</div>
 
-    <!--<div class="other-links">-->
-    <!--  <%= link_to t(".sign_in"), sign_in_path %>-->
-    <!--</div>-->
   <% end %>
 </div>
 </div>

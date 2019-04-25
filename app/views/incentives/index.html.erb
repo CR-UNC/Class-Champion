@@ -1,26 +1,46 @@
-<p><% if signed_in? %>
-  <h1><%= current_user.username %></h1>
-  <h2> Current Points: <%= current_user.points %></h2>
-  <%= button_to "Sign out", sign_out_path, method: :delete %>
+<div class="container assignments-jumbo-words">
+    <div class="row">
+    
+      <p><% if signed_in? %>
+      <div class="col-sm-4">
+        <h1><%= current_user.username %></h1>
+      </div>
+      <div class="col-sm-8">
+        <h1> Current Points: <%= current_user.points %></h1>
+      </div>
   
-<% else %>
-  <h1>Username(placeholder)</h1>
-  <%= link_to "Sign in", sign_in_path %><br>
-<% end %>
-</p>
-<%= link_to 'Create Incentive', new_incentive_path %> 
-<table class="table">
+        <%= button_to "Sign out", sign_out_path, method: :delete, :class => "btn btn-danger sign-out-btn" %>
+      <% else %>
+      <div class="col-sm-12">
+        <h1>Username(placeholder)</h1>
+        <%= link_to "Sign in", sign_in_path %><br>
+      </div>
+        
+      <% end %>
+     </p>
+    
+  </div>
+</div>
+<div class = "container">
+  <div class = "row">
+    <div class="col-sm-6"><%= link_to 'Create Incentive  +', new_incentive_path, :class => "top-links" %></div>
+    <div class="col-sm-6"> <%=  link_to '<-  Back to Assignments', "/assignments/", :class => "top-links" %></div>
+  </div>
+</div>
+
+<div class = "container">
+<table class="table table-light table-striped">
   <thead class="thead-light">
     <tr>
       <th scope="col">List of incentives</th>
       <th scope="col">Description</th>
       <th scope="col">Cost</th>
       <th scope="col">Image</th>
-     
-    
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
-  <h2> You can only buy rewards you have the points for</h2>
   <% @user = current_user %>
   <% @incentives.each do |incentive| %>
   <% if signed_in? && current_user.id == incentive.user_id %>
@@ -36,5 +56,4 @@
   <% end %>
   <% end %>
 </table>
-<p>
-<%= link_to 'Back to Assignments', "https://c7a547a5ede1415184f8430dfe553e08.vfs.cloud9.us-east-2.amazonaws.com/assignments/" %></p>
+</div>

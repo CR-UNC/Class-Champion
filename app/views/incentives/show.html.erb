@@ -1,3 +1,4 @@
+<div id = 'show-box'>
 <p>
     <strong> Title:</strong>
     <%= @incentive.title %>
@@ -20,4 +21,6 @@
                   <% end %>
 </p>
 
-<%= link_to 'Rewards', incentives_path %>
+<%= link_to '<- Rewards', incentives_path, :class => "btn btn-primary" %>
+
+</div>

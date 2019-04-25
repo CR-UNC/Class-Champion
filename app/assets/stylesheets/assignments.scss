@@ -1,72 +1,71 @@
 // Place all the styles related to the Assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'bootstrap';
 
 
-
-body{background-color: #046A38;}
-input[type= text]{
-    width: 25%;
-    padding: 12px 12px;
-    border: 2px solid #b9975b;
-    background-color: #dfedd6;
-    margin:20px 25%;
-    
+.assignments-jumbo-words{
+    background-color: #0cffcfb8;
+    border-radius: 20px;
+    margin-top: 40px;  margin-bottom: 20px;
+    padding: 70px;
+    opacity: .85;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    color: #fefeff;
 }
 
-textarea{
-    width: 25%;
-    padding: 12px 12px;
-    border: 2px solid #b9975b;
-    background-color: #dfedd6;
-    margin: 20px 25%;
-}
-
-h1.new-page{
-    color:#b9975b; 
-    font:40px bold; 
-    font-style: "Abril Fatface"; 
-    margin:20px 42.5%; 
-    width:300px;
-    text-align:center;
-}
-
-input[type=submit]{
-    background-color: #b9975b;
-    border: 2px solid white;
-    color: black;
-    padding: 16px 32px;
+.top-links{
+    color: #f9ff00;
     text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
+    font-size: larger;
+}
+.top-links:hover{
+    color: #f5b7b7;
+    text-decoration: underline;
+    font-size: larger;
 }
 
-p{
-    color: white;
+.sign-out-btn {
+    background-color: #feff72;
+    color: black;
+    border-color: black;
+    border-radius: 25px;
+    width: 125px;
+    margin-top: 5px;
+    margin-left: 84%;
+    padding: -1px;
+}
+
+#new-assignment-box{
     text-align:center;
-    
+    background-color: #5ceee2c7;
+    width: 400px; height: 600px; 
+    margin: 100px 0 0 36.33333%;
+    border-radius: 25px;
+    border: 2px solid #dfedd6;
+    padding: 20px; 
 }
 
 
-
-table, th, td{
-    border: 2.5px solid #b9975b;
-    padding: 12px 12px;
-    text-align: left;
-    background-color: white;
+#compl-assignment-box{
+    text-align:center;
+    background-color: #5ceee2c7;
+    width: 400px; height: 300px; 
+    margin: 100px 0 0 36.33333%;
+    border-radius: 25px;
+    border: 2px solid #dfedd6;
+    padding: 20px; 
 }
+#new-assignment-box-heading{color:white; font: 50px strong; font-style: "Abril Fatface"; margin: 20px 0px 0px 21%; width: 200px; text-align: center;}
 
-a:link, a:visited {
-  background-color: #b9975b;
-  color: white;
-  border: 2px solid white;
-  padding: 10px 25px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
+#show-box{
+    text-align:center;
+    background-color: #59f255;
+    width: 400px; height: 350px; 
+    margin: 100px 0 0 36.33333%;
+    border-radius: 25px;
+    border: 2px solid #dfedd6;
+    padding: 20px; 
 }
-
-h2{
-    color:white;
-}
+#show-box-heading{color:white; font: 50px strong; font-style: "Abril Fatface"; margin: 20px 0px 0px 21%; width: 200px; text-align: center;}
