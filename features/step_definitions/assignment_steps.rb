@@ -57,3 +57,7 @@ end
 Given("I am on the Complete assignment page") do
   visit edit_assignment_path(assignment)
 end
+
+When("I click the {string} button") do |string|
+  click_button
+end
