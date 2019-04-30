@@ -41,25 +41,20 @@ Then("I should see the {string} field") do |field_name|
 end
 
 When("I fill the account email textbox with value {string}") do |string|
-  
-  pending # Write code here that turns the phrase above into concrete actions
   fill_in "email", :with => string
   
 end
 
 When("I fill the Username texbox with value {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
   fill_in "username", :with => string
 end
 
 When("I fill the password textbox with value {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
   fill_in "password", :with => string
 end
 
 
 When("I press the {string} link") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
   click_link(string)
 end
 
@@ -79,8 +74,12 @@ Given("I am on the Complete assignment page") do
   visit edit_assignment_path(assignment)
 end
 
-Then("I click the {string} button") do |string|
-  click_button
+#Then("I press the {string} button") do |string|
+#  click_button
+#end
+
+And("I press the {string} button") do |string|
+  click_button(string)
 end
 
 Then("I should fill the assignment name field with {string}") do |string|

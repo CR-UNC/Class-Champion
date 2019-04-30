@@ -20,5 +20,5 @@ Scenario: As a user I want to be able to interact with assignment's page
   And I should fill the "assignment_text" field with "Test"
   And I should fill the "assignment_difficulty" field with "10"
   And I should fill the "assignment_Goalgrade" field with "100"
-  Then I click the "Create Assignment" button
+  Then I press the "Create Assignment" button
   
