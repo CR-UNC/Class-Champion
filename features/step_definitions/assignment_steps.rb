@@ -17,12 +17,12 @@ Given("I am signed in") do
 end
 
 Given("There is an assignment") do
-  @user = User.create(:username => "test1",
-                   :email => "testing@testington.com",
-                   :password => "1234")
+  @user = User.create(:username => "example",
+                   :email => "example@uncc.edu",
+                   :password => "example")
   @user.points = 0
   @user.save!
-  @assignment = @user.assignments.create(:title => "Test", :text=>"tester", :difficulty => 10, :Goalgrade => 100)
+  @assignment = @user.assignments.create(:title => "Test", :text=>"tester", :difficulty => 10, :Goalgrade => 100, :Due => "2019-10-10")
   @assignment.points = (10 * @assignment.difficulty) + (@assignment.Goalgrade/2).round
   @assignment.save!
   
@@ -106,4 +106,10 @@ end
 And("I should fill the {string} field with {string}") do |string, string2|
   
   fill_in string, :with => string2
+end
+
+
+Then("{string} should be incremented") do |string|
+ # Write code here that turns the phrase above into concrete actions
+ expect(page).to have_content(string)
 end
